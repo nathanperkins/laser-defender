@@ -1,10 +1,14 @@
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 10f;
+    [SerializeField] float moveSpeed;
     [SerializeField] GameObject laserPrefab;
-    [SerializeField] float shotSpeed = 1f;
+    [SerializeField] float shotSpeed;
+    [SerializeField] float shotInterval;
+
+    Coroutine firingCoroutine;
 
     float xMin, xMax, yMin, yMax;
 
@@ -44,18 +48,32 @@ public class Player : MonoBehaviour
 
     private void Fire()
     {
-		if (Input.GetButtonDown("Fire1"))
+		if (Input.GetButtonDown("Fire1") && firingCoroutine == null)
 		{
-            // Start from tip of ship.
-			Vector3 pos = transform.position;
-			pos.y += transform.localScale.y;
+            firingCoroutine = StartCoroutine(FireContinuously());
+		}
+        else if (Input.GetButtonUp("Fire1") && firingCoroutine != null)
+		{
+            StopCoroutine(firingCoroutine);
+            firingCoroutine = null;
+		}
+	}
 
-			GameObject laser = Instantiate(
-				laserPrefab, pos, Quaternion.identity);
+    private IEnumerator FireContinuously()
+	{
+        while (true)
+        {
+            // Start from tip of ship.
+            Vector3 pos = transform.position;
+            pos.y += transform.localScale.y;
+
+            GameObject laser = Instantiate(
+                laserPrefab, pos, Quaternion.identity);
 
             var body = laser.GetComponent<Rigidbody2D>();
-			body.velocity = new Vector2(0, shotSpeed);
-		}
+            body.velocity = new Vector2(0, shotSpeed);
+            yield return new WaitForSeconds(shotInterval);
+        }
 	}
 
     private float ScaleMovement(float delta)
