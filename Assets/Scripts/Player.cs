@@ -3,6 +3,9 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] float moveSpeed = 10f;
+    [SerializeField] GameObject laserPrefab;
+    [SerializeField] float shotSpeed = 1f;
+
     float xMin, xMax, yMin, yMax;
 
     void Start()
@@ -10,10 +13,10 @@ public class Player : MonoBehaviour
         SetMoveBoundaries();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        Move();    
+        Move();
+        Fire();
     }
 
     private void SetMoveBoundaries()
@@ -38,6 +41,22 @@ public class Player : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y + deltaY, yMin, yMax);
         transform.position = pos;
     }
+
+    private void Fire()
+    {
+		if (Input.GetButtonDown("Fire1"))
+		{
+            // Start from tip of ship.
+			Vector3 pos = transform.position;
+			pos.y += transform.localScale.y;
+
+			GameObject laser = Instantiate(
+				laserPrefab, pos, Quaternion.identity);
+
+            var body = laser.GetComponent<Rigidbody2D>();
+			body.velocity = new Vector2(0, shotSpeed);
+		}
+	}
 
     private float ScaleMovement(float delta)
     {
