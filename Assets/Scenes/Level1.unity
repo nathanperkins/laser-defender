@@ -212,11 +212,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7282287347377431719, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
       propertyPath: waves.Array.size
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7282287347377431719, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
       propertyPath: waves.Array.data[0]
       value: 
       objectReference: {fileID: 11400000, guid: d6f032a6b07fa4f4d80afa73df786aa3, type: 2}
+    - target: {fileID: 7282287347377431719, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: waves.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: b43938565a55f40488aec7cc05edb9ce, type: 2}
+    - target: {fileID: 7282287347377431719, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: waves.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 3857cc5b253c149d18eb2e77c1ba60aa, type: 2}
+    - target: {fileID: 7282287347377431719, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: waves.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: c2ae114e2450149a89ff506650954915, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
