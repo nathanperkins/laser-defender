@@ -3,16 +3,16 @@ using UnityEngine;
 
 public class EnemyPathing : MonoBehaviour
 {
-    [SerializeField] GameObject path;
+    [SerializeField] Wave wave;
     [SerializeField] float moveSpeed;
     [SerializeField] bool enableLogging;
 
-    List<Vector3> waypoints = new List<Vector3>();
+    List<Vector3> waypoints;
     int waypointIndex = 0;
 
     void Start()
     {
-        SetWaypointsFromPath();
+        waypoints = wave.GetWaypoints();
         transform.position = waypoints[waypointIndex];
         NextWaypoint();
     }
@@ -39,18 +39,6 @@ public class EnemyPathing : MonoBehaviour
                 Debug.Log("Destroying enemy " + gameObject.name);
             }
             Destroy(gameObject);
-		}
-	}
-
-    private void SetWaypointsFromPath()
-	{ 
-        var points = path.GetComponentsInChildren<Transform>();
-        for (int i = 1; i < points.Length; i++) {
-            var point = points[i];
-			waypoints.Add(point.transform.position);
-		}
-        if (enableLogging) {
-            Debug.Log("Found " + waypoints.Count + " waypoints for enemy " + gameObject.name);
 		}
 	}
 
