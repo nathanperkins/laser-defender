@@ -3,7 +3,11 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    [Header("Player")]
     [SerializeField] float moveSpeed;
+    [SerializeField] int health;
+
+    [Header("Projectile")]
     [SerializeField] GameObject laserPrefab;
     [SerializeField] float shotSpeed;
     [SerializeField] float shotInterval;
@@ -45,6 +49,20 @@ public class Player : MonoBehaviour
         pos.y = Mathf.Clamp(pos.y + deltaY, yMin, yMax);
         transform.position = pos;
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        DamageDealer damageDealer = collision.gameObject.GetComponent<DamageDealer>();
+        ProcessHit(damageDealer);
+    }
+
+    private void ProcessHit(DamageDealer damageDealer) {
+        health -= damageDealer.GetDamage();
+        damageDealer.Hit();
+        if (health <= 0) {
+            Destroy(gameObject);
+		}
+	}
 
     private void Fire()
     {
