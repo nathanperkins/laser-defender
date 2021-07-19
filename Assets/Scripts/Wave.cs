@@ -21,6 +21,7 @@ public class Wave : ScriptableObject
 	}
 
     public GameObject GetPath() { return pathPrefab; }
+    public GameObject GetEnemyPrefab() { return enemyPrefab; }
     public float GetTimeBetweenSpawns() { return timeBetweenSpawns; }
     public float GetSpawnRandomFactor() { return spawnRandomFactor; }
     public int GetNumberOfEnemies() { return numberOfEnemies; }
