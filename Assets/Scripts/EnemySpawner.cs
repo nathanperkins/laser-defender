@@ -19,10 +19,11 @@ public class EnemySpawner : MonoBehaviour
 	{
         for (int enemyCount = 0; enemyCount < wave.GetNumberOfEnemies(); enemyCount++)
 		{
-			Instantiate(
+            GameObject newEnemy = Instantiate(
 				wave.GetEnemyPrefab(),
 				wave.GetWaypoints()[0],
 				Quaternion.identity);
+            newEnemy.GetComponent<EnemyPathing>().SetWave(wave);
 
 			yield return new WaitForSeconds(wave.GetTimeBetweenSpawns());
 		}
