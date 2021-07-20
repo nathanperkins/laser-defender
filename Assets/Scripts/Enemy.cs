@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
@@ -68,7 +66,9 @@ public class Enemy : MonoBehaviour
 
     private void OnDestroy()
     {
-        Die(); 
+        if (health <= 0) { 
+			Die();
+		}
     }
 
     private void Die()
@@ -80,6 +80,5 @@ public class Enemy : MonoBehaviour
 				transform.position,
 				Quaternion.identity);
 		}
-        Destroy(gameObject);
 	}
 }

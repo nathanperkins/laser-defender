@@ -63,17 +63,22 @@ public class Player : MonoBehaviour
         ProcessHit(damageDealer);
     }
 
+    private void OnDestroy()
+    {
+        Die();
+    }
+
     private void ProcessHit(DamageDealer damageDealer) {
         health -= damageDealer.GetDamage();
         damageDealer.Hit();
         if (health <= 0) {
-            Die();
+            Destroy(gameObject);
 		}
 	}
 
-    private void Die() { 
-        AudioSource.PlayClipAtPoint(deathSound, transform.position, deathSoundVolume);
-        Destroy(gameObject);
+    private void Die() {
+		AudioSource.PlayClipAtPoint(deathSound, transform.position, deathSoundVolume);
+		FindObjectOfType<Level>().LoadGameOver();
 	}
 
     private void Fire()
