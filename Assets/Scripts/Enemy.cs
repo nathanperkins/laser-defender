@@ -62,8 +62,13 @@ public class Enemy : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            Die();
+            Destroy(gameObject);
         }
+    }
+
+    private void OnDestroy()
+    {
+        Die(); 
     }
 
     private void Die()
