@@ -4,13 +4,22 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
+    [Header("Prefabs")]
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject deathVFX;
+
+    [Header("Game")]
     [SerializeField] int health;
     [SerializeField] float timeUntilShot;
     [SerializeField] float minTimeBetweenShots;
     [SerializeField] float maxTimeBetweenShots;
     [SerializeField] float shotSpeed;
+
+    [Header("Audio")]
+    [SerializeField] AudioClip shootSound;
+    [Range(0.0f, 1.0f)] [SerializeField] float shootSoundVolume;
+    [SerializeField] AudioClip deathSound;
+    [Range(0.0f, 1.0f)] [SerializeField] float deathSoundVolume;
 
     void Update()
     {
@@ -37,6 +46,7 @@ public class Enemy : MonoBehaviour
             projectilePrefab, pos, Quaternion.identity);
 
         projectile.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -shotSpeed);
+        AudioSource.PlayClipAtPoint(shootSound, transform.position, shootSoundVolume);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,12 +68,13 @@ public class Enemy : MonoBehaviour
 
     private void Die()
     {
-        Destroy(gameObject);
+        AudioSource.PlayClipAtPoint(deathSound, transform.position, deathSoundVolume);
         if (deathVFX) { 
 			Instantiate(
 				deathVFX,
 				transform.position,
 				Quaternion.identity);
 		}
+        Destroy(gameObject);
 	}
 }
