@@ -112,6 +112,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectilePrefab: {fileID: 387169304741813977, guid: 742866c3ce936445f8c03b6664244170, type: 3}
+  deathVFX: {fileID: 4631610869104360213, guid: 5b23cfbedb09a4a06906b5b06f511eb8, type: 3}
   health: 20
   timeUntilShot: 0
   minTimeBetweenShots: 0.5

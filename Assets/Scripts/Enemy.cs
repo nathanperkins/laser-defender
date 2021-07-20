@@ -5,6 +5,7 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] GameObject projectilePrefab;
+    [SerializeField] GameObject deathVFX;
     [SerializeField] int health;
     [SerializeField] float timeUntilShot;
     [SerializeField] float minTimeBetweenShots;
@@ -51,7 +52,18 @@ public class Enemy : MonoBehaviour
         damageDealer.Hit();
         if (health <= 0)
         {
-            Destroy(gameObject);
+            Die();
         }
     }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        if (deathVFX) { 
+			Instantiate(
+				deathVFX,
+				transform.position,
+				Quaternion.identity);
+		}
+	}
 }
