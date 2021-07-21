@@ -6,12 +6,13 @@ public class Enemy : MonoBehaviour
     [SerializeField] GameObject projectilePrefab;
     [SerializeField] GameObject deathVFX;
 
-    [Header("Game")]
+    [Header("Stats")]
     [SerializeField] int health;
     [SerializeField] float timeUntilShot;
     [SerializeField] float minTimeBetweenShots;
     [SerializeField] float maxTimeBetweenShots;
     [SerializeField] float shotSpeed;
+    [SerializeField] int pointsForKill;
 
     [Header("Audio")]
     [SerializeField] AudioClip shootSound;
@@ -80,5 +81,6 @@ public class Enemy : MonoBehaviour
 				transform.position,
 				Quaternion.identity);
 		}
+        FindObjectOfType<GameSession>().AddToScore(pointsForKill);
 	}
 }

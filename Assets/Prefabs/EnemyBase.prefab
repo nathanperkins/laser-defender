@@ -120,6 +120,7 @@ MonoBehaviour:
   minTimeBetweenShots: 0.5
   maxTimeBetweenShots: 1
   shotSpeed: 20
+  pointsForKill: 100
   shootSound: {fileID: 8300000, guid: 579a2c775a48b4392b762e5f76847943, type: 3}
   shootSoundVolume: 0.5
   deathSound: {fileID: 8300000, guid: 04e8610b95c03420497f4f439cf6a51a, type: 3}
