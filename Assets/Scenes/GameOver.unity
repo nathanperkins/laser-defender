@@ -879,20 +879,12 @@ PrefabInstance:
       value: GameCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 5469741597009901291, guid: a280d36afd0b84b199724db52c401818, type: 3}
-      propertyPath: m_HorizontalAlignment
-      value: 2
+      propertyPath: m_text
+      value: 000
       objectReference: {fileID: 0}
-    - target: {fileID: 5609537610202608882, guid: a280d36afd0b84b199724db52c401818, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 48
-      objectReference: {fileID: 0}
-    - target: {fileID: 5609537610202608882, guid: a280d36afd0b84b199724db52c401818, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -88
-      objectReference: {fileID: 0}
-    - target: {fileID: 6497127498361899682, guid: a280d36afd0b84b199724db52c401818, type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 25
+    - target: {fileID: 6324799290150590699, guid: a280d36afd0b84b199724db52c401818, type: 3}
+      propertyPath: m_text
+      value: 000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a280d36afd0b84b199724db52c401818, type: 3}

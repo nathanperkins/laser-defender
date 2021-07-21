@@ -305,7 +305,36 @@ PrefabInstance:
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 3157333310249224364, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: m_text
+      value: 000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588874290514732213, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 185
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588874290514732213, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 92.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3588874290514732213, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 307
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035022525565740716, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: m_text
+      value: 000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035022525565740716, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: m_margin.x
+      value: 0.15594482
+      objectReference: {fileID: 0}
+    - target: {fileID: 4035022525565740716, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: m_HorizontalAlignment
+      value: 4
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 3357685002594743441, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
 --- !u!1001 &5478279769877401163
 PrefabInstance:

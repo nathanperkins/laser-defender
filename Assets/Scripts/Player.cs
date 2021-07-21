@@ -22,12 +22,14 @@ public class Player : MonoBehaviour
 
     float xMin, xMax, yMin, yMax;
 
-    void Start()
+    public int GetHealth() { return health; }
+
+    private void Start()
     {
         SetMoveBoundaries();
     }
 
-    void Update()
+    private void Update()
     {
         Move();
         Fire();
@@ -77,6 +79,7 @@ public class Player : MonoBehaviour
 	}
 
     private void Die() {
+        health = 0;
 		AudioSource.PlayClipAtPoint(deathSound, transform.position, deathSoundVolume);
 		FindObjectOfType<Level>().LoadGameOver();
 	}

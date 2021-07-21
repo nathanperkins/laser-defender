@@ -15,6 +15,11 @@ public class ScoreText : MonoBehaviour
         if (!textMesh) {
             textMesh = GetComponent<TextMeshProUGUI>();
 		}
-	    textMesh.text = gameSession.GetScore().ToString();
+
+        if (gameSession) { 
+	        textMesh.text = gameSession.GetScore().ToString();
+		} else {
+            textMesh.text = "No Score";
+		}
     }
 }
