@@ -103,9 +103,9 @@ MonoBehaviour:
   shotSpeed: 40
   shotInterval: 0.1
   shootSound: {fileID: 8300000, guid: 18561903967b14c1e8cc0daef675e6d2, type: 3}
-  shootSoundVolume: 0.25
+  shootSoundVolume: 0.4
   deathSound: {fileID: 8300000, guid: 03be2c2d507504f9297cb7860e13917a, type: 3}
-  deathSoundVolume: 1
+  deathSoundVolume: 0.8
 --- !u!61 &-7331479435176498491
 BoxCollider2D:
   m_ObjectHideFlags: 0
