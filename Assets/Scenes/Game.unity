@@ -301,6 +301,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level
       objectReference: {fileID: 0}
+    - target: {fileID: 2409652427939938209, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 17.25
+      objectReference: {fileID: 0}
     - target: {fileID: 2755435041322490597, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
       propertyPath: m_AdditionalShaderChannelsFlag
       value: 25
@@ -373,8 +377,16 @@ PrefabInstance:
       propertyPath: m_HorizontalAlignment
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 5718903576201842530, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -17.33
+      objectReference: {fileID: 0}
     - target: {fileID: 7247747312125429481, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
       propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7282287347377431719, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}
+      propertyPath: looping
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7282287347377431719, guid: b392d465cb95842b597a6f561b7e60d0, type: 3}

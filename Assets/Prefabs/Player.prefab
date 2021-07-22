@@ -100,8 +100,8 @@ MonoBehaviour:
   moveSpeed: 10
   health: 500
   laserPrefab: {fileID: 5316603720558915710, guid: bfcf43b0c749c4c1a9214e2284a78c76, type: 3}
-  shotSpeed: 30
-  shotInterval: 0.2
+  shotSpeed: 40
+  shotInterval: 0.1
   shootSound: {fileID: 8300000, guid: 18561903967b14c1e8cc0daef675e6d2, type: 3}
   shootSoundVolume: 0.25
   deathSound: {fileID: 8300000, guid: 03be2c2d507504f9297cb7860e13917a, type: 3}
